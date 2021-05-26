@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = {
   optimization: {
@@ -15,14 +16,14 @@ module.exports = {
     vendors: [
       "react",
       "react-dom",
-      //   "react-router",
-      //   "react-router-dom",
-      //   "redux",
-      //   "react-redux",
+      "react-router",
+      "react-router-dom",
+      "redux",
+      "react-redux",
       //   "redux-devtools",
       //   "redux-thunk",
     ],
-    index: path.resolve(__dirname, "./src/index.ts"),
+    index: path.resolve(__dirname, "./src/index.tsx"),
   },
   //   devtool: 'inline-source-map',
   output: {
@@ -39,8 +40,12 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.css$/i,
-        use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader"],
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+          // "css-loader",
+          { loader: "css-loader", options: { modules: true } },
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -69,6 +74,7 @@ module.exports = {
 
   devServer: {
     contentBase: path.join(__dirname, "dist"),
+    writeToDisk: true,
     compress: true,
     hot: true,
     port: 9000,
