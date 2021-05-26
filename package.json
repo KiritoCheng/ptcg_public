@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/KiritoCheng/ptcg_public#readme",
   "devDependencies": {
+    "@types/react-router-dom": "^5.1.7",
     "awesome-typescript-loader": "^5.2.1",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^5.2.6",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.6.0",
@@ -32,7 +34,8 @@
     "typescript": "^4.2.4",
     "webpack": "^5.37.1",
     "webpack-cli": "^4.7.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "workbox-webpack-plugin": "^6.1.5"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.1",
