@@ -1,0 +1,43 @@
+{
+  "name": "ptcg_public",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve --mode=development",
+    "start:prod": "webpack serve --mode=production",
+    "build": "webpack --mode=development",
+    "build:prod": "webpack --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KiritoCheng/ptcg_public.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KiritoCheng/ptcg_public/issues"
+  },
+  "homepage": "https://github.com/KiritoCheng/ptcg_public#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "css-loader": "^5.2.6",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.6.0",
+    "source-map-loader": "^3.0.0",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^9.2.2",
+    "typescript": "^4.2.4",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@types/react": "^17.0.6",
+    "@types/react-dom": "^17.0.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
