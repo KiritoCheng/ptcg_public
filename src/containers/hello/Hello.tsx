@@ -7,7 +7,7 @@ import {
   selectCount,
 } from "./helloSlice";
 import styles from "./Counter.module.css";
-import { useAppSelector, useAppDispatch } from "../../common/libs/hook";
+import { useAppSelector, useAppDispatch } from "../../libs/hook";
 
 export function Counter() {
   // The `state` arg is correctly typed as `RootState` already

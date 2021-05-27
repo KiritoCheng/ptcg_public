@@ -1,4 +1,3 @@
-import { fetchCategory } from "./../../common/libs/api";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState, AppDispatch } from "./../../reducers/index";
 
@@ -39,9 +38,6 @@ export const { increment, decrement, incrementByAmount } = slice.actions;
 // will call the thunk with the `dispatch` function as the first argument. Async
 // code can then be executed and other actions can be dispatched
 export const incrementAsync = (amount: number) => (dispatch: AppDispatch) => {
-  fetchCategory().then((res) => {
-    console.log("res", res);
-  });
   setTimeout(() => {
     dispatch(incrementByAmount(amount));
   }, 1000);
