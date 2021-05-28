@@ -6,7 +6,7 @@ import "./App.css";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/ptcg">
       <Switch>
         <Route path="/test">
           <Counter />

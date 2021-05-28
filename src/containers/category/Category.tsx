@@ -1,18 +1,16 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useEffect } from "react";
 import {
   initCategorys,
   selectCategory,
   fetchCategorysAsync,
 } from "./categorySlice";
 import { useAppSelector, useAppDispatch } from "../../libs/hook";
-import { categoryTypes } from "../../actions/category/schema";
 
-export const Category = () => {
+export const Category: React.FunctionComponent = () => {
   // The `state` arg is correctly typed as `RootState` already
   const categoryList = useAppSelector(selectCategory);
 
   const dispatch = useAppDispatch();
-  //   const [categoryState, setCategoryState] = useState<categoryTypes[]>([]);
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {

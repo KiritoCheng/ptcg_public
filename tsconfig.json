@@ -7,6 +7,7 @@
     "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
+    "suppressImplicitAnyIndexErrors": true,
     // "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true

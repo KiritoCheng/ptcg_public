@@ -1,14 +1,9 @@
 import { fetchCategoryApi } from "../../libs/api";
-import { categorySchema, categoryTypes } from "./schema";
-import { resTypes } from "../type";
+import { categorySchema, getCategoryAsyncTypes } from "./schema";
 
-interface categoryResTypes extends resTypes {
-  data: categoryTypes[];
-}
-
-export const getCategoryAsync = async () => {
+export const getCategoryAsync: getCategoryAsyncTypes = async () => {
   return await fetchCategoryApi(categorySchema)
-    .then((response: { getCategory: categoryResTypes }) => {
+    .then((response) => {
       const { getCategory } = response;
       const { res, errorInfo, data } = getCategory;
       if (res !== 0) {
