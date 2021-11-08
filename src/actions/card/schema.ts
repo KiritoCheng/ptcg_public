@@ -16,30 +16,28 @@ export const pokemonSchema = setSchema({
   category: null,
   name: null,
   hp: null,
-  // category
-  // name
-  // hp
-  // p_type
+  p_type: null,
   abilitys: {
     cost: null,
     skill: null,
     damage: null,
     content: null,
   },
-  // power {
-  //   cost
-  //   skill
-  //   damage
-  //   content
-  // }
-  // weakness_type
-  // resistance_type
-  // weakness_number
-  // resistance_number
-  // escape
-  // img
+  power: {
+    cost: null,
+    skill: null,
+    damage: null,
+    content: null,
+  },
+  weakness_type: null,
+  resistance_type: null,
+  weakness_number: null,
+  resistance_number: null,
+  escape: null,
+  img: null,
 });
 
+// data types
 export type powerTypes = {
   cost?: string;
   skill?: string;

@@ -5,8 +5,6 @@ export const getPokemonListAsync: getPokemonAsyncTypes = async ({
   category,
   page,
 }) => {
-  console.log(pokemonSchema);
-
   return await fetchCardApi({
     query: pokemonSchema,
     variables: { category, page },
