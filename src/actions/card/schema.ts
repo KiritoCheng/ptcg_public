@@ -38,7 +38,7 @@ export const pokemonSchema = setSchema({
 });
 
 // data types
-export type powerTypes = {
+type powerTypes = {
   cost?: string;
   skill?: string;
   damage?: string;
@@ -70,6 +70,8 @@ export interface trainerTypes {
   effect?: string;
   img?: string;
 }
+
+export interface cardTypes extends pokemonTypes, trainerTypes {}
 
 // api types
 export type fetchCardApiTypes = (params: {

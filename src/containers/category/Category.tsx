@@ -6,7 +6,7 @@ import {
 } from "./categorySlice";
 import { useAppSelector, useAppDispatch } from "../../libs/hook";
 
-export const Category: React.FunctionComponent = () => {
+export const CategoryPage: React.FunctionComponent = () => {
   // The `state` arg is correctly typed as `RootState` already
   const categoryList = useAppSelector(selectCategory);
 
@@ -23,7 +23,10 @@ export const Category: React.FunctionComponent = () => {
       <button onClick={() => dispatch(initCategorys([]))}>clean</button>
       <button onClick={() => dispatch(fetchCategorysAsync())}>fetch</button>
       {categoryList.map((k) => (
-        <div key={k.name}>{k.name}</div>
+        <div key={k.name}>
+          <a href={`/card?category=${k.name}`}>{k.name}</a>
+          <br />
+        </div>
       ))}
     </div>
   );
