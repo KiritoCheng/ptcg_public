@@ -33,7 +33,10 @@ class CardPage extends React.Component<CardPageProps> {
           // return <img src={k.img} />;
           return (
             <>
-              <div>{k.id}</div>
+              <div>
+                {k.name}
+                <img src={k.img} />
+              </div>
             </>
           );
         })}
