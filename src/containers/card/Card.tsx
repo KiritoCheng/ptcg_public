@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { setCardList, selectCardList, fetchCardListAsync } from "./cardSlice";
 import { cardTypes } from "../../actions/card/schema";
 import { AppDispatch, RootState } from "../../reducers";
+import { resolveProxyImg } from "../../libs/units";
 
 interface CardPageDataProps {
   cardList: cardTypes[];
@@ -30,12 +31,11 @@ class CardPage extends React.Component<CardPageProps> {
     return (
       <>
         {cardList.map((k) => {
-          // return <img src={k.img} />;
           return (
             <>
               <div>
-                {k.name}
-                <img src={k.img} />
+                {k.id}
+                <img src={resolveProxyImg(k.img)} />
               </div>
             </>
           );

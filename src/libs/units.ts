@@ -12,3 +12,14 @@ export const transformToGraphqlString = (obj: Object) => {
   });
   return `{ ${res} }`;
 };
+
+// 处理nginx反向代理图片地址
+export const resolveProxyImg = (url: string) => {
+  // 'http://www.pmtcgo.com/img/card/default/SWSH5_9.png'
+  if (url.indexOf("http://www.pmtcgo.com/") == 0) {
+    return `https://kiritosa.com/ptcg/proxy/img/${url.slice(22)}`;
+  }
+
+  console.warn("未知地址，不进行反向代理设置");
+  return url;
+};
