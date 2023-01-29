@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WorkboxPlugin = require("workbox-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const devMode = process.env.NODE_ENV !== "production";
+const isDevServer = process.argv[2].indexOf('serve') !== -1;
 
 module.exports = {
   optimization: {
@@ -31,7 +32,7 @@ module.exports = {
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname + "/dist"),
-    publicPath: "https://kiritosa.com/ptcg/",
+    publicPath: isDevServer ? "./" : "https://kiritosa.com/ptcg/",
     clean: true,
   },
   module: {
